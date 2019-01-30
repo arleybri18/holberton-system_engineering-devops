@@ -1,0 +1,17 @@
+.\" Manpage for nuseradd.
+.\" Contact Yony Brinez
+.TH man 8 "30 Jan 2019" "1.0" "holberton man page"
+.SH NAME
+Holberton \= become a full\-stack software engineer.
+.SH SYNOPSIS
+holberton [STUDENTNAME]
+.SH DESCRIPTION
+Holberton School is a project\-based alternative to college for the next generation of software engineers.
+.SH OPTIONS
+The nuseradd does not take any options. However, you can supply username.
+.SH SEE ALSO
+useradd(8), passwd(5), nuseradd.debian(8) 
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Vivek Gite (vivek@nixcraft.net.in)
