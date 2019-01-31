@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "doing: [$1] [$2] [$3]"
+chmod u+x $1
+git add $1
+git commit -m "$2"
+git push
