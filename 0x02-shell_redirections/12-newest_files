@@ -1,0 +1,3 @@
+#!/bin/bash
+ls -t | sort -r
+# try with this command too ls -t | head
