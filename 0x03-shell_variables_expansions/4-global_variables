@@ -1,2 +1,2 @@
 #!/bin/bash
-printenv | cut -d"=" -f1
+printenv
