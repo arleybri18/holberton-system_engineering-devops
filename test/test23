@@ -1,0 +1,1 @@
+ cat nasa_19950801.tsv | sort -R | cut -d "-" -f 1 | uniq -d | head -n 11 cat nasa_19950801.tsv | sort -R | cut -d "-" -f 1 | uniq -d | head -n 11
