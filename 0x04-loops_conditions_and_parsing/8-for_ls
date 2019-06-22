@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This script list all files in the current directory whitout number and dash
+for i in `ls`;do echo "$i" | cut -d'-' -f2 ;done
