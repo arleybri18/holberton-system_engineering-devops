@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script copy a file to remote server, receive 4 parameters
+# scp -i ~/.ssh/holberton test.txt ubuntu@34.73.255.16:~/
+if [ "$#" -ne 4 ]
+then
+	echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY" >&2
+	exit 1
+else
+	scp -i "$4" "$1" "$3@$2":~/
+fi
