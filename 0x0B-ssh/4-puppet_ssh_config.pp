@@ -7,11 +7,11 @@ file_line { 'change auth type':
   ensure => present,
   path   => '$_path',
   line   => 'PasswordAuthentication no',
-  match  => '^PasswordAuthentication',
+  match  => '^PasswordAuthentication.*$',
 }
 file_line { 'set identity file':
   ensure => present,
   path   => '$_path',
   line   => 'IdentityFile ~/.ssh/holberton',
-  match  => '^IdentityFile',
+  match  => '^IdentityFile.$',
 }
