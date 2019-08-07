@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# this script install apache server on ubuntu 16.04
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get install apache2 apache2-doc apache2-utils
+sudo service apache2 start
