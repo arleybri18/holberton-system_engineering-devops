@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script install nginx server on ubuntu 16.04
+# This script install nginx server on ubuntu 16.04 and configure redirect
 apt-get -y update
 apt-get -y install nginx
 echo Holberton School > /var/www/html/index.html
