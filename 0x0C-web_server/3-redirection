@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
-#Install nginx web server
-
-URL=/etc/nginx/sites-available/default
-TEXT="location /redirect_me {\n return 301 https://www.google.com;\n}\n"
-
+# This script install nginx server on ubuntu 16.04 and configure redirect
 sudo apt-get -y update
 sudo apt-get -y install nginx
-echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
-sudo sed -i "37i $TEXT" $URL
+echo "Holberton School" | sudo tee /var/www/html/index.html
+redir_page="\n\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n"
+sudo sed -i "37i\ $redir_page" /etc/nginx/sites-available/default
 sudo service nginx stop
 sudo service nginx start
