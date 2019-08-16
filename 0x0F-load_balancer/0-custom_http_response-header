@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script set the custom response header
+# shellcheck disable=SC2154
+sudo sed -i "37i\ \tadd_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
+sudo service nginx restart 
