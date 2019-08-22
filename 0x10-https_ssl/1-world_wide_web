@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# function that print the subdomains and ips that point
+function domains(){
+	dig "$1" | grep -A1 'ANSWER SECTION' | awk '
+	{
+		split($1,a,".")
+		if (NF >= 5)
+		print "The subdomain " a[1] " is a " $4 " record and points to " $5
+	}'
+}
+
+if [[ "$#" -ne 2  ]];
+then
+	dom=(www lb-01 web-01 web-02)
+       	for i in "${dom[@]}"; do domains "$i.$1"; done	
+else
+	domains "$2.$1"
+fi
