@@ -1,18 +1,27 @@
 #!/usr/bin/env bash
 # function that print the subdomains and ips that point
 function domains(){
+	# execute command dig with the parameter sended
 	dig "$1" | grep -A1 'ANSWER SECTION' | awk '
 	{
+		# split the first field inside awk (i.e. www.mysite.com, result www)
 		split($1,a,".")
+		# validate number of the fields in the line
 		if (NF >= 5)
+		# print and replace fields
 		print "The subdomain " a[1] " is a " $4 " record and points to " $5
 	}'
 }
 
-if [[ "$#" -ne 2  ]];
+# validate number of arguments sended in the shell
+if [[ "$#" -eq 1  ]];
 then
+	# execute without one parameter
+	# create array
 	dom=(www lb-01 web-01 web-02)
+	# iterate over array and call the function
        	for i in "${dom[@]}"; do domains "$i.$1"; done	
 else
+	# call the funtion with the two parameters
 	domains "$2.$1"
 fi
