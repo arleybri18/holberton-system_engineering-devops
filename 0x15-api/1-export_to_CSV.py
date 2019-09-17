@@ -23,6 +23,6 @@ if __name__ == '__main__':
     for todo in todos:
         row = list([argv[1], username, str(todo['completed']), todo['title']])
         list_rows.append(row)
-    with open('2.csv', 'wt') as csv_file:
+    with open('{}.csv'.format(argv[1]), 'wt') as csv_file:
         csv_writer = csv.writer(csv_file, quoting=csv.QUOTE_NONNUMERIC)
         csv_writer.writerows(list_rows)
