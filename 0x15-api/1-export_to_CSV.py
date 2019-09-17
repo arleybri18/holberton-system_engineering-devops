@@ -21,7 +21,7 @@ if __name__ == '__main__':
     username = user['username']
     list_rows = []
     for todo in todos:
-        row = list([argv[1], username, todo['completed'], todo['title']])
+        row = list([argv[1], username, str(todo['completed']), todo['title']])
         list_rows.append(row)
     with open('2.csv', 'wt') as csv_file:
         csv_writer = csv.writer(csv_file, quoting=csv.QUOTE_NONNUMERIC)
