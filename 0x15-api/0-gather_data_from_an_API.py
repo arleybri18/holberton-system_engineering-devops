@@ -25,4 +25,4 @@ if __name__ == '__main__':
     print("Employee {} is done with tasks({}/{}):".
           format(name, comp, len(todos)))
     for todo in todo_list:
-        print('\t{}'.format(todo))
+        print('\t {}'.format(todo))
