@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import re
 import requests
 """ Modify prototype for handle pagination """
 
@@ -32,9 +31,8 @@ def count_words(subreddit, word_list, hot_list=[], after='null', flag=0):
         """ find word in the list of titles fill with the recursion """
         for word in word_list:
             num = 0
-            rx = r'\b%s\b'% word
             for title in hot_list:
-                num = num + len(re.findall(rx, title.lower()))
+                num = num + title.lower().count(word)
             key_dict[word] = num
         tup_list = sorted(key_dict.items(), key=lambda x: x[1], reverse=True)
         for tupl in tup_list:
